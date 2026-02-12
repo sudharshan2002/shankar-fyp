@@ -38,7 +38,7 @@ export function Navbar({ onNavigate }: NavbarProps) {
               <Brain className="w-4.5 h-4.5 text-background" />
             </div>
             <span className="font-bold text-[15px]">
-              AI Guardrail
+              AgenSentra Guardrail
             </span>
           </div>
 

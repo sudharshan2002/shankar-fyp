@@ -133,7 +133,7 @@ export function HeroSection({ onNavigateToDemo }: HeroSectionProps) {
                 className="w-1.5 h-1.5 rounded-full bg-[var(--button-primary)]"
               />
               <span className="text-[11px] font-medium text-foreground/70 tracking-[0.15em] uppercase">
-                AI Guardrail
+                AgenSentra Guardrail
               </span>
             </motion.div>
           </motion.div>
@@ -186,7 +186,7 @@ export function HeroSection({ onNavigateToDemo }: HeroSectionProps) {
             className="mb-12 md:mb-14"
           >
             <p className="text-[17px] md:text-[20px] text-muted-foreground max-w-2xl font-normal leading-[1.6]">
-              Multi-layer detection protecting AI systems from adversarial image attacks.
+              A multi-domain detection framework protecting open source Vision-Language Models (VLMs) from invisible steganographic embedding attacks
             </p>
           </motion.div>
 
@@ -236,66 +236,8 @@ export function HeroSection({ onNavigateToDemo }: HeroSectionProps) {
               </span>
             </motion.button>
 
-            {/* Secondary CTA */}
-            <motion.button
-              onClick={onNavigateToDemo}
-              className="group relative overflow-hidden px-8 py-4 rounded-xl font-medium text-[16px] w-full sm:w-auto border border-border/60"
-              whileHover="hover"
-              whileTap={{ scale: 0.98 }}
-            >
-              {/* Animated background */}
-              <motion.div
-                className="absolute inset-0 bg-muted/50"
-                variants={{
-                  hover: { opacity: 1 }
-                }}
-                initial={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
-              />
-              
-              <span className="relative text-foreground flex items-center justify-center gap-2">
-                View Research
-                <motion.span
-                  variants={{
-                    hover: { x: 3 }
-                  }}
-                  transition={{ duration: 0.3 }}
-                  className="opacity-50"
-                >
-                  →
-                </motion.span>
-              </span>
-            </motion.button>
           </motion.div>
 
-          {/* Subtle stats indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.4 }}
-            className="mt-16 md:mt-20 flex flex-wrap items-center gap-8 md:gap-12"
-          >
-            {[
-              { label: "Detection Accuracy", value: "96.8%" },
-              { label: "Avg. Latency", value: "99ms" },
-              { label: "Trusted by", value: "Enterprise" }
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.5 + index * 0.1 }}
-                className="flex flex-col gap-1"
-              >
-                <div className="text-[13px] text-muted-foreground/60 tracking-wide">
-                  {stat.label}
-                </div>
-                <div className="text-[20px] md:text-[24px] font-semibold tracking-tight">
-                  {stat.value}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
         </div>
       </motion.div>
 

@@ -18,7 +18,7 @@ export function Footer() {
             <div className="w-8 h-8 rounded-lg bg-foreground flex items-center justify-center">
               <Brain className="w-4.5 h-4.5 text-background" />
             </div>
-            <span className="font-bold text-[16px]">AI Guardrail</span>
+            <span className="font-bold text-[16px]">AgenSentra Guardrail</span>
           </div>
 
           {/* Center: Links - Balanced spacing */}
@@ -117,7 +117,7 @@ export function Footer() {
           className="mt-10 md:mt-12 lg:mt-16 pt-8 md:pt-10 lg:pt-12 border-t border-border"
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 text-[13px] md:text-[14px] text-muted-foreground">
-            <p>© 2026 AI Guardrail. Research-driven security.</p>
+            <p>© 2026 AgenSentra Guardrail. Research-driven security.</p>
             <div className="flex gap-6 md:gap-8">
               <motion.a
                 whileHover={{ y: -2 }}

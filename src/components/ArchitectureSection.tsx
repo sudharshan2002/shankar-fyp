@@ -82,53 +82,6 @@ export function ArchitectureSection() {
             ))}
           </div>
 
-          {/* Technical details below - Responsive spacing */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-16 md:mt-24 lg:mt-32 pt-12 md:pt-14 lg:pt-16 border-t border-border"
-          >
-            <div className="grid md:grid-cols-3 gap-12 md:gap-16 lg:gap-20">
-              <div>
-                <div className="text-[14px] md:text-[15px] text-muted-foreground mb-2 md:mb-3 tracking-wide">Detection Layers</div>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                  className="text-[36px] md:text-[40px] font-bold tracking-tight"
-                >
-                  3
-                </motion.div>
-              </div>
-              <div>
-                <div className="text-[14px] md:text-[15px] text-muted-foreground mb-2 md:mb-3 tracking-wide">Avg. Latency</div>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.7 }}
-                  className="text-[36px] md:text-[40px] font-bold tracking-tight"
-                >
-                  &lt;100ms
-                </motion.div>
-              </div>
-              <div>
-                <div className="text-[14px] md:text-[15px] text-muted-foreground mb-2 md:mb-3 tracking-wide">Execution</div>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
-                  className="text-[36px] md:text-[40px] font-bold tracking-tight"
-                >
-                  Parallel
-                </motion.div>
-              </div>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>
