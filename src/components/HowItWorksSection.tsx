@@ -34,7 +34,7 @@ export function HowItWorksSection() {
             How It Works
           </h2>
           <p className="text-[16px] md:text-[18px] text-muted-foreground max-w-2xl">
-            Multi-domain analysis working together to identify threats
+            Three detection layers running in parallel to identify threats
           </p>
         </motion.div>
 

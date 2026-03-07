@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Brain } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 import { motion } from 'motion/react';
+import { useNavigate, useLocation } from 'react-router';
 
 interface NavbarProps {
   onNavigate: (section: string) => void;
@@ -9,6 +10,8 @@ interface NavbarProps {
 
 export function Navbar({ onNavigate }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +21,14 @@ export function Navbar({ onNavigate }: NavbarProps) {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleLogoClick = () => {
+    if (location.pathname === '/') {
+      onNavigate('home');
+    } else {
+      navigate('/');
+    }
+  };
 
   return (
     <motion.nav
@@ -33,14 +44,14 @@ export function Navbar({ onNavigate }: NavbarProps) {
       <div className="max-w-[1300px] mx-auto px-6 md:px-12 lg:px-24 py-4 md:py-5">
         <div className="flex items-center justify-between">
           {/* Left: Logo */}
-          <div className="flex items-center gap-2.5">
+          <button onClick={handleLogoClick} className="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
             <div className="w-8 h-8 rounded-lg bg-foreground flex items-center justify-center">
               <Brain className="w-4.5 h-4.5 text-background" />
             </div>
             <span className="font-bold text-[15px]">
-              AgenSentra Guardrail
+              AI Guardrail
             </span>
-          </div>
+          </button>
 
           {/* Center: Navigation */}
           <div className="hidden md:flex items-center gap-1">
@@ -56,14 +67,23 @@ export function Navbar({ onNavigate }: NavbarProps) {
           </div>
 
           {/* Right: Actions */}
-          <div className="flex items-center gap-3 md:gap-4">
+          <div className="flex items-center gap-2 md:gap-4">
             <ThemeToggle />
-            <button
-              onClick={() => onNavigate('demo')}
-              className="btn-primary px-4 md:px-6 py-2 md:py-2.5 rounded-lg font-medium text-[13px] md:text-[14px]"
-            >
-              Try Demo
-            </button>
+            
+            <div className="hidden sm:flex items-center gap-2">
+              <button 
+                onClick={() => navigate('/login')}
+                className="px-4 py-2 rounded-lg text-[13px] font-medium text-foreground hover:bg-muted transition-all"
+              >
+                Log in
+              </button>
+              <button 
+                onClick={() => navigate('/signup')}
+                className="btn-primary px-4 py-2 rounded-lg font-medium text-[13px]"
+              >
+                Sign up
+              </button>
+            </div>
           </div>
         </div>
       </div>
